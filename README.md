@@ -81,19 +81,24 @@ Make sure you have the following prerequisites installed on your machine:
    or  
    python -m venv env
 ```
-then start the environmenet :  
+3.then start the environmenet :  
 ```bash
-  env\Scripts\activate
+  source venv/bin/activate
 ```
 
-3. Navigate to the project directory:
+4. Navigate to the project directory:
 ```bash 
 cd Hospital-Management
 ```
+5. Upgrade pip
+```
+    python -m pip install --upgrade pip
+    pip install "setuptools<58" "wheel<0.40"
+```
 
-5. Install the required dependencies:
+6. Install the required dependencies:
 ```bash
-pip install -r requirements.txt
+pip install --no-build-isolation -r requirements.txt
 ```
 
 7. Apply migrations to set up the database:
@@ -164,3 +169,4 @@ python manage.py loaddata seed/specialities.json
 python manage.py loaddata seed/status.json
 python manage.py loaddata seed/time.json
 ```
+
